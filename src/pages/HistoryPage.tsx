@@ -42,12 +42,76 @@ const historicalEvents: HistoricalEvent[] = [
     sources: ["Sealed Nectar", "Ibn Hisham's Sirah"]
   },
   {
+    year: "624 CE",
+    title: "Battle of Badr",
+    description: "The first major battle between the Muslims and the Quraysh of Makkah.",
+    category: "prophetic",
+    location: "Badr",
+    sources: ["Sahih Bukhari", "Sealed Nectar"]
+  },
+  {
+    year: "628 CE",
+    title: "Treaty of Hudaybiyyah",
+    description: "A pivotal peace treaty between the Muslims and the Quraysh of Makkah.",
+    category: "prophetic",
+    location: "Hudaybiyyah",
+    sources: ["Sahih Bukhari", "Ibn Hisham's Sirah"]
+  },
+  {
+    year: "630 CE",
+    title: "Conquest of Makkah",
+    description: "The peaceful conquest of Makkah by the Muslims led by Prophet Muhammad ﷺ.",
+    category: "prophetic",
+    location: "Makkah",
+    sources: ["Sealed Nectar", "Sahih Bukhari"]
+  },
+  {
     year: "632 CE",
     title: "Completion of the Message",
     description: "Prophet Muhammad ﷺ completed his mission and returned to Allah.",
     category: "prophetic",
     location: "Madinah",
     sources: ["Sahih Bukhari", "Sahih Muslim"]
+  },
+  {
+    year: "632-634 CE",
+    title: "Caliphate of Abu Bakr",
+    description: "First Caliph of Islam, dealt with the riddah wars and began the compilation of the Quran.",
+    category: "caliphate",
+    location: "Madinah",
+    sources: ["Tarikh al-Tabari", "Al-Bidayah wan-Nihayah"]
+  },
+  {
+    year: "634-644 CE",
+    title: "Caliphate of Umar ibn Al-Khattab",
+    description: "Second Caliph, expanded the Islamic state and established many administrative systems.",
+    category: "caliphate",
+    location: "Madinah",
+    sources: ["Tarikh al-Tabari", "Futuh al-Buldan"]
+  },
+  {
+    year: "750 CE",
+    title: "Rise of the Abbasid Caliphate",
+    description: "Beginning of the Golden Age of Islam with significant advances in science and culture.",
+    category: "civilization",
+    location: "Baghdad",
+    sources: ["Tarikh al-Tabari", "Al-Kamil fi al-Tarikh"]
+  },
+  {
+    year: "786-809 CE",
+    title: "Reign of Harun al-Rashid",
+    description: "Peak of the Abbasid Caliphate, marked by cultural and scientific achievements.",
+    category: "civilization",
+    location: "Baghdad",
+    sources: ["Tarikh Baghdad", "Al-Fihrist"]
+  },
+  {
+    year: "832 CE",
+    title: "House of Wisdom",
+    description: "Establishment of Bayt al-Hikma in Baghdad, a major intellectual center.",
+    category: "knowledge",
+    location: "Baghdad",
+    sources: ["Al-Fihrist", "Tarikh al-Hukama"]
   }
 ];
 
