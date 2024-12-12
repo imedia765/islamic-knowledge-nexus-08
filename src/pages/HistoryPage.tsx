@@ -16,66 +16,76 @@ export interface HistoricalEvent {
 }
 
 const historicalEvents: HistoricalEvent[] = [
+  // Prophetic Era Events
   {
     year: "570 CE",
     title: "Birth of Prophet Muhammad ﷺ",
-    description: "Prophet Muhammad ﷺ was born in Makkah in the Year of the Elephant.",
+    description: "Prophet Muhammad ﷺ was born in Makkah in the Year of the Elephant. His father Abdullah had passed away before his birth, and his mother Aminah would care for him in his early years.",
     category: "prophetic",
     location: "Makkah",
     sources: ["Sealed Nectar", "Ibn Ishaq's Sirah"]
   },
   {
+    year: "576 CE",
+    title: "Death of Prophet's Mother",
+    description: "Aminah bint Wahb, the Prophet's mother, passed away at Abwa while returning from Madinah, leaving the young Muhammad ﷺ in the care of his grandfather Abdul Muttalib.",
+    category: "prophetic",
+    location: "Abwa",
+    sources: ["Sealed Nectar", "Ibn Hisham's Sirah"]
+  },
+  {
+    year: "595 CE",
+    title: "Marriage to Khadijah",
+    description: "Prophet Muhammad ﷺ married Khadijah bint Khuwaylid, who would become his greatest supporter and the first to accept Islam.",
+    category: "prophetic",
+    location: "Makkah",
+    sources: ["Sahih Bukhari", "Sealed Nectar"]
+  },
+  {
     year: "610 CE",
     title: "First Revelation",
-    description: "The first verses of the Quran were revealed to Prophet Muhammad ﷺ in the Cave of Hira.",
+    description: "The first verses of the Quran were revealed to Prophet Muhammad ﷺ in the Cave of Hira during the month of Ramadan.",
     category: "prophetic",
     location: "Cave of Hira, Makkah",
     sources: ["Sahih Bukhari", "Sahih Muslim"]
   },
   {
+    year: "613 CE",
+    title: "Public Preaching Begins",
+    description: "Prophet Muhammad ﷺ began publicly preaching Islam in Makkah, facing increasing opposition from the Quraysh.",
+    category: "prophetic",
+    location: "Makkah",
+    sources: ["Ibn Ishaq's Sirah", "Sealed Nectar"]
+  },
+  {
+    year: "619 CE",
+    title: "Year of Sorrow",
+    description: "The Prophet ﷺ lost both his beloved wife Khadijah and his uncle Abu Talib in the same year, marking a particularly difficult period.",
+    category: "prophetic",
+    location: "Makkah",
+    sources: ["Sealed Nectar", "Ibn Hisham's Sirah"]
+  },
+  {
+    year: "620 CE",
+    title: "Night Journey and Ascension",
+    description: "The miraculous night journey (Isra) and ascension (Miraj) of Prophet Muhammad ﷺ occurred, during which the five daily prayers were prescribed.",
+    category: "prophetic",
+    location: "Makkah to Jerusalem to Heavens",
+    sources: ["Sahih Bukhari", "Sahih Muslim"]
+  },
+  {
     year: "622 CE",
     title: "The Hijra",
-    description: "Migration of Prophet Muhammad ﷺ and his followers from Makkah to Madinah, marking the beginning of the Islamic calendar.",
+    description: "The migration of Prophet Muhammad ﷺ and his followers from Makkah to Madinah, marking the beginning of the Islamic calendar.",
     category: "prophetic",
     location: "Makkah to Madinah",
     sources: ["Sealed Nectar", "Ibn Hisham's Sirah"]
   },
-  {
-    year: "624 CE",
-    title: "Battle of Badr",
-    description: "The first major battle between the Muslims and the Quraysh of Makkah.",
-    category: "prophetic",
-    location: "Badr",
-    sources: ["Sahih Bukhari", "Sealed Nectar"]
-  },
-  {
-    year: "628 CE",
-    title: "Treaty of Hudaybiyyah",
-    description: "A pivotal peace treaty between the Muslims and the Quraysh of Makkah.",
-    category: "prophetic",
-    location: "Hudaybiyyah",
-    sources: ["Sahih Bukhari", "Ibn Hisham's Sirah"]
-  },
-  {
-    year: "630 CE",
-    title: "Conquest of Makkah",
-    description: "The peaceful conquest of Makkah by the Muslims led by Prophet Muhammad ﷺ.",
-    category: "prophetic",
-    location: "Makkah",
-    sources: ["Sealed Nectar", "Sahih Bukhari"]
-  },
-  {
-    year: "632 CE",
-    title: "Completion of the Message",
-    description: "Prophet Muhammad ﷺ completed his mission and returned to Allah.",
-    category: "prophetic",
-    location: "Madinah",
-    sources: ["Sahih Bukhari", "Sahih Muslim"]
-  },
+  // Caliphate Era Events
   {
     year: "632-634 CE",
     title: "Caliphate of Abu Bakr",
-    description: "First Caliph of Islam, dealt with the riddah wars and began the compilation of the Quran.",
+    description: "First Caliph of Islam who unified Arabia, dealt with the riddah wars, and began the compilation of the Quran.",
     category: "caliphate",
     location: "Madinah",
     sources: ["Tarikh al-Tabari", "Al-Bidayah wan-Nihayah"]
@@ -83,34 +93,84 @@ const historicalEvents: HistoricalEvent[] = [
   {
     year: "634-644 CE",
     title: "Caliphate of Umar ibn Al-Khattab",
-    description: "Second Caliph, expanded the Islamic state and established many administrative systems.",
+    description: "Second Caliph who established the Islamic calendar, expanded the state significantly, and introduced numerous administrative reforms.",
     category: "caliphate",
     location: "Madinah",
     sources: ["Tarikh al-Tabari", "Futuh al-Buldan"]
   },
   {
-    year: "750 CE",
-    title: "Rise of the Abbasid Caliphate",
-    description: "Beginning of the Golden Age of Islam with significant advances in science and culture.",
+    year: "644-656 CE",
+    title: "Caliphate of Uthman ibn Affan",
+    description: "Third Caliph who standardized the Quran's compilation and expanded the Islamic territory to include parts of modern-day Iran and Armenia.",
+    category: "caliphate",
+    location: "Madinah",
+    sources: ["Tarikh al-Tabari", "Al-Bidayah wan-Nihayah"]
+  },
+  {
+    year: "656-661 CE",
+    title: "Caliphate of Ali ibn Abi Talib",
+    description: "Fourth Caliph, cousin and son-in-law of the Prophet ﷺ, known for his wisdom and justice in governance.",
+    category: "caliphate",
+    location: "Kufa",
+    sources: ["Tarikh al-Tabari", "Nahj al-Balagha"]
+  },
+  // Islamic Civilization Events
+  {
+    year: "661-750 CE",
+    title: "Umayyad Caliphate",
+    description: "First hereditary dynasty in Islamic history, marked by significant territorial expansion and cultural developments.",
     category: "civilization",
-    location: "Baghdad",
+    location: "Damascus",
     sources: ["Tarikh al-Tabari", "Al-Kamil fi al-Tarikh"]
   },
   {
-    year: "786-809 CE",
-    title: "Reign of Harun al-Rashid",
-    description: "Peak of the Abbasid Caliphate, marked by cultural and scientific achievements.",
+    year: "750-1258 CE",
+    title: "Abbasid Caliphate",
+    description: "Golden Age of Islam, characterized by remarkable achievements in science, literature, and arts.",
     category: "civilization",
     location: "Baghdad",
     sources: ["Tarikh Baghdad", "Al-Fihrist"]
   },
   {
-    year: "832 CE",
-    title: "House of Wisdom",
-    description: "Establishment of Bayt al-Hikma in Baghdad, a major intellectual center.",
+    year: "756-1031 CE",
+    title: "Cordoba Caliphate",
+    description: "Islamic golden age in Al-Andalus (Spain), marked by religious tolerance and cultural advancement.",
+    category: "civilization",
+    location: "Cordoba",
+    sources: ["Al-Maqari's Nafh al-Tib", "Ibn Hayyan's Al-Muqtabis"]
+  },
+  // Knowledge & Science Events
+  {
+    year: "750-850 CE",
+    title: "Translation Movement",
+    description: "Major translation effort of Greek, Persian, and Indian texts into Arabic, laying foundation for Islamic golden age.",
     category: "knowledge",
     location: "Baghdad",
     sources: ["Al-Fihrist", "Tarikh al-Hukama"]
+  },
+  {
+    year: "780-850 CE",
+    title: "Al-Khwarizmi's Contributions",
+    description: "Development of algebra and algorithms by Muhammad ibn Musa al-Khwarizmi, founding father of algebra.",
+    category: "knowledge",
+    location: "Baghdad",
+    sources: ["Kitab al-Jabr", "Al-Fihrist"]
+  },
+  {
+    year: "965-1040 CE",
+    title: "Ibn Al-Haytham's Optics",
+    description: "Revolutionary work in optics and scientific method by Ibn Al-Haytham, known as 'father of modern optics'.",
+    category: "knowledge",
+    location: "Cairo",
+    sources: ["Kitab al-Manazir", "Al-Qifti's Tarikh al-Hukama"]
+  },
+  {
+    year: "980-1037 CE",
+    title: "Ibn Sina's Medical Canon",
+    description: "Publication of 'The Canon of Medicine' by Ibn Sina (Avicenna), remained medical authority until 18th century.",
+    category: "knowledge",
+    location: "Bukhara",
+    sources: ["Al-Qanun fi al-Tibb", "Ibn Abi Usaybi'ah's History of Physicians"]
   }
 ];
 
