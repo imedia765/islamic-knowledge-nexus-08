@@ -1,4 +1,5 @@
 import { Search, Book, PlayCircle, Download } from "lucide-react";
+import QuranViewer from "@/components/quran/QuranViewer";
 
 const QuranPage = () => {
   return (
@@ -25,6 +26,11 @@ const QuranPage = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Quran Viewer Section */}
+      <section className="py-16">
+        <QuranViewer />
       </section>
 
       {/* Features Grid */}
