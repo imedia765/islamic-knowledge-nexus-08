@@ -15,6 +15,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/quran" element={<div className="p-8 text-center">Quran Module (Coming Soon)</div>} />
+          <Route path="/hadith" element={<div className="p-8 text-center">Hadith Module (Coming Soon)</div>} />
+          <Route path="/fiqh" element={<div className="p-8 text-center">Fiqh Module (Coming Soon)</div>} />
+          <Route path="/research" element={<div className="p-8 text-center">Research Tools (Coming Soon)</div>} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
