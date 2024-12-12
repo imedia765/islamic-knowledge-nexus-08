@@ -23,7 +23,37 @@ const Index = () => {
                   alt="Holy Quran on a wooden holder"
                   className="w-full h-[400px] object-cover rounded-lg shadow-xl animate-fade-in"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-lg">
+                  <svg
+                    className="absolute inset-0 w-full h-full opacity-10"
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M0,0 L100,0 L100,100 L0,100 Z"
+                      fill="none"
+                      stroke="currentColor"
+                      className="text-primary-500"
+                      strokeWidth="0.5"
+                    />
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="30"
+                      fill="none"
+                      stroke="currentColor"
+                      className="text-primary-500"
+                      strokeWidth="0.5"
+                    />
+                    <path
+                      d="M25,50 Q50,25 75,50 Q50,75 25,50"
+                      fill="none"
+                      stroke="currentColor"
+                      className="text-primary-500"
+                      strokeWidth="0.5"
+                    />
+                  </svg>
+                </div>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/quran" className="btn-primary">
