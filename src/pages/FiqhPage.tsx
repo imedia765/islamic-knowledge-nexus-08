@@ -27,6 +27,7 @@ const FiqhPage = () => {
       title: "Searching...",
       description: `Searching for "${searchQuery}" in ${selectedMadhab} fiqh under ${selectedCategory}`,
     });
+    // Search implementation would go here
   };
 
   return (
@@ -129,7 +130,7 @@ const FiqhPage = () => {
 
         {/* Quick Access Tools */}
         <div className="grid gap-6 md:grid-cols-3">
-          <Card className="hover:shadow-lg transition-all cursor-pointer">
+          <Card className="hover:bg-accent transition-colors cursor-pointer">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Filter className="h-5 w-5" />
@@ -137,11 +138,11 @@ const FiqhPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">Access frequently referenced rulings and fatwas</p>
+              Access frequently referenced rulings and fatwas
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-lg transition-all cursor-pointer">
+          <Card className="hover:bg-accent transition-colors cursor-pointer">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Book className="h-5 w-5" />
@@ -149,11 +150,11 @@ const FiqhPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">Access educational resources and study guides</p>
+              Access educational resources and study guides
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-lg transition-all cursor-pointer">
+          <Card className="hover:bg-accent transition-colors cursor-pointer">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <MessageCircle className="h-5 w-5" />
@@ -161,7 +162,7 @@ const FiqhPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">Submit questions to qualified scholars</p>
+              Submit questions to qualified scholars
             </CardContent>
           </Card>
         </div>
