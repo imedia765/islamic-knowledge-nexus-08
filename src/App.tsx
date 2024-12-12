@@ -10,6 +10,7 @@ import ResearchPage from "./pages/ResearchPage";
 import HadithPage from "./pages/HadithPage";
 import FiqhPage from "./pages/FiqhPage";
 import HistoryPage from "./pages/HistoryPage";
+import BooksPage from "./pages/BooksPage";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/fiqh" element={<FiqhPage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/research" element={<ResearchPage />} />
+          <Route path="/books" element={<BooksPage />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

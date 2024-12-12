@@ -14,6 +14,7 @@ export const Navigation = () => {
             <Link to="/hadith" className="nav-link">Hadith</Link>
             <Link to="/fiqh" className="nav-link">Fiqh</Link>
             <Link to="/history" className="nav-link">History</Link>
+            <Link to="/books" className="nav-link">Books</Link>
             <Link to="/research" className="nav-link">Research</Link>
           </div>
 
