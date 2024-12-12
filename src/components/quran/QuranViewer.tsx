@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tooltip } from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 const QuranViewer = () => {
   const [currentVerse, setCurrentVerse] = useState(1);
@@ -104,29 +104,39 @@ const QuranViewer = () => {
                 </SelectContent>
               </Select>
               
-              <Tooltip content={isBookmarked ? "Remove bookmark" : "Add bookmark"}>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={toggleBookmark}
-                  className={isBookmarked ? "text-primary-600" : ""}
-                >
-                  <Bookmark className="h-4 w-4" fill={isBookmarked ? "currentColor" : "none"} />
-                </Button>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={toggleBookmark}
+                    className={isBookmarked ? "text-primary-600" : ""}
+                  >
+                    <Bookmark className="h-4 w-4" fill={isBookmarked ? "currentColor" : "none"} />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{isBookmarked ? "Remove bookmark" : "Add bookmark"}</p>
+                </TooltipContent>
               </Tooltip>
               
-              <Tooltip content={isPlaying ? "Pause recitation" : "Play recitation"}>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={togglePlayback}
-                >
-                  {isPlaying ? (
-                    <PauseCircle className="h-4 w-4" />
-                  ) : (
-                    <PlayCircle className="h-4 w-4" />
-                  )}
-                </Button>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={togglePlayback}
+                  >
+                    {isPlaying ? (
+                      <PauseCircle className="h-4 w-4" />
+                    ) : (
+                      <PlayCircle className="h-4 w-4" />
+                    )}
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{isPlaying ? "Pause recitation" : "Play recitation"}</p>
+                </TooltipContent>
               </Tooltip>
             </div>
           </div>
