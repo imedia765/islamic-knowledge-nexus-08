@@ -36,24 +36,24 @@ export const BookFilters = ({
   ];
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 p-4 bg-primary-50/50 rounded-lg shadow-sm">
       <div className="relative">
-        <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
+        <Search className="absolute left-3 top-2.5 h-4 w-4 text-primary-600" />
         <Input
           placeholder="Search books..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-10"
+          className="pl-10 border-primary-200 focus:border-primary-500 focus:ring-primary-500"
         />
       </div>
       
-      <div className="flex flex-wrap gap-4">
-        <div className="w-full md:w-auto">
+      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+        <div className="w-full sm:w-auto">
           <Select
             value={selectedLanguage}
             onValueChange={(value: "all" | "arabic" | "english") => setSelectedLanguage(value)}
           >
-            <SelectTrigger className="w-[200px]">
+            <SelectTrigger className="w-full sm:w-[200px] border-primary-200">
               <SelectValue placeholder="Select Language" />
             </SelectTrigger>
             <SelectContent>
@@ -64,12 +64,12 @@ export const BookFilters = ({
           </Select>
         </div>
 
-        <div className="w-full md:w-auto">
+        <div className="w-full sm:w-auto">
           <Select
             value={selectedCategory}
             onValueChange={setSelectedCategory}
           >
-            <SelectTrigger className="w-[200px]">
+            <SelectTrigger className="w-full sm:w-[200px] border-primary-200">
               <SelectValue placeholder="Select Category" />
             </SelectTrigger>
             <SelectContent>
@@ -82,11 +82,16 @@ export const BookFilters = ({
           </Select>
         </div>
 
-        <div className="ml-auto flex gap-2">
+        <div className="flex gap-2 ml-auto">
           <Button
             variant={viewMode === "grid" ? "default" : "outline"}
             onClick={() => setViewMode("grid")}
             size="sm"
+            className={`${
+              viewMode === "grid"
+                ? "bg-primary-600 hover:bg-primary-700"
+                : "border-primary-200 text-primary-700 hover:bg-primary-50"
+            }`}
           >
             Grid
           </Button>
@@ -94,6 +99,11 @@ export const BookFilters = ({
             variant={viewMode === "list" ? "default" : "outline"}
             onClick={() => setViewMode("list")}
             size="sm"
+            className={`${
+              viewMode === "list"
+                ? "bg-primary-600 hover:bg-primary-700"
+                : "border-primary-200 text-primary-700 hover:bg-primary-50"
+            }`}
           >
             List
           </Button>
