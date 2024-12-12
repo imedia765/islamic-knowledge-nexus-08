@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
+import { AIAssistant } from "@/components/ai/AIAssistant";
 import Index from "./pages/Index";
 import QuranPage from "./pages/QuranPage";
 import ResearchPage from "./pages/ResearchPage";
@@ -21,6 +22,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Navigation />
+        <AIAssistant />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/quran" element={<QuranPage />} />
