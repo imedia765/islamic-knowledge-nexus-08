@@ -27,5 +27,23 @@ export const lossEvents: HistoricalEvent[] = [
     location: "Turkey",
     sources: ["Turkish Republic Archives", "Contemporary News Reports"],
     isLoss: true
+  },
+  {
+    year: "1948 CE",
+    title: "Creation of Israel",
+    description: "The establishment of Israel led to the displacement of Palestinians and ongoing conflicts in the region.",
+    category: "civilization",
+    location: "Palestine",
+    sources: ["UN Documents", "Historical Records"],
+    isLoss: true
+  },
+  {
+    year: "2023-2024",
+    title: "Gaza-Israel Conflict",
+    description: "Devastating conflict in Gaza resulting in significant civilian casualties and humanitarian crisis, marking one of the most severe conflicts in recent Palestinian history.",
+    category: "civilization",
+    location: "Gaza, Palestine",
+    sources: ["UN Reports", "International Media Coverage"],
+    isLoss: true
   }
 ];

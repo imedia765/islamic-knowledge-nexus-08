@@ -42,5 +42,22 @@ export const modernEvents: HistoricalEvent[] = [
     category: "knowledge",
     location: "Global",
     sources: ["Digital Archives", "Academic Papers"]
+  },
+  {
+    year: "2021",
+    title: "Taliban Return to Power",
+    description: "The Taliban regained control of Afghanistan following the withdrawal of US forces, establishing an Islamic emirate.",
+    category: "civilization",
+    location: "Afghanistan",
+    sources: ["International News Reports", "UN Documents"]
+  },
+  {
+    year: "2023-2024",
+    title: "Gaza-Israel Conflict",
+    description: "Devastating conflict in Gaza resulting in significant civilian casualties and humanitarian crisis, marking one of the most severe conflicts in recent Palestinian history.",
+    category: "civilization",
+    location: "Gaza, Palestine",
+    sources: ["UN Reports", "International Media Coverage"],
+    isLoss: true
   }
 ];
