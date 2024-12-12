@@ -9,6 +9,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
 
 interface Message {
@@ -19,6 +20,7 @@ interface Message {
 export function AIAssistant() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
+  const [isMinimized, setIsMinimized] = useState(false);
 
   const handleSend = () => {
     if (!input.trim()) return;
@@ -40,23 +42,42 @@ export function AIAssistant() {
     setInput("");
   };
 
+  const handleMinimize = () => {
+    setIsMinimized(true);
+  };
+
   return (
     <Sheet>
       <SheetTrigger asChild>
         <Button
           variant="outline"
           size="icon"
-          className="fixed right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 bg-primary text-primary-foreground hover:bg-primary/90"
+          className={`${
+            isMinimized 
+              ? "relative h-10 w-10 rounded-full" 
+              : "fixed right-4 top-20 z-50 h-12 w-12 rounded-full shadow-lg hover:shadow-xl"
+          } transition-all duration-200 bg-primary text-primary-foreground hover:bg-primary/90`}
+          onClick={() => setIsMinimized(false)}
         >
           <Bot className="h-6 w-6" />
         </Button>
       </SheetTrigger>
       <SheetContent className="w-[400px] sm:w-[540px]">
-        <SheetHeader>
+        <SheetHeader className="flex flex-row justify-between items-center">
           <SheetTitle className="flex items-center gap-2">
             <Bot className="h-5 w-5" />
             AI Assistant
           </SheetTitle>
+          <SheetClose asChild>
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className="h-8 w-8"
+              onClick={handleMinimize}
+            >
+              <X className="h-4 w-4" />
+            </Button>
+          </SheetClose>
         </SheetHeader>
         <div className="flex flex-col h-[calc(100vh-8rem)]">
           <ScrollArea className="flex-1 pr-4">

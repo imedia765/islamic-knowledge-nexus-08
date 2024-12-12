@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { AIAssistant } from "@/components/ai/AIAssistant";
 
 export const Navigation = () => {
   return (
@@ -19,6 +20,7 @@ export const Navigation = () => {
           </div>
 
           <div className="flex items-center space-x-4">
+            <AIAssistant />
             <button className="btn-secondary">Sign In</button>
             <button className="btn-primary">Get Started</button>
           </div>
@@ -26,4 +28,4 @@ export const Navigation = () => {
       </div>
     </nav>
   );
-};
+}
