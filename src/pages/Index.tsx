@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Search, Book, BookOpen, Users } from "lucide-react";
+import { Search, Book, BookOpen, Users, GraduationCap, Globe, BookMarked, Heart } from "lucide-react";
 
 const Index = () => {
   return (
@@ -65,6 +65,61 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Popular Topics Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Popular Topics</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <TopicCard
+                icon={<GraduationCap className="w-6 h-6" />}
+                title="Islamic Education"
+                description="Access comprehensive courses and learning materials for all levels of Islamic studies."
+                link="/research"
+              />
+              <TopicCard
+                icon={<Globe className="w-6 h-6" />}
+                title="Global Community"
+                description="Connect with Muslims worldwide and share knowledge in a supportive environment."
+                link="/research"
+              />
+              <TopicCard
+                icon={<BookMarked className="w-6 h-6" />}
+                title="Scholarly Works"
+                description="Explore classical and contemporary Islamic scholarly works and research papers."
+                link="/research"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Statistics Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+              <StatCard number="1000+" label="Scholarly Articles" />
+              <StatCard number="500+" label="Video Lectures" />
+              <StatCard number="50+" label="Expert Scholars" />
+              <StatCard number="100K+" label="Active Users" />
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action Section */}
+        <section className="py-20 bg-primary-50">
+          <div className="container mx-auto px-4 text-center">
+            <div className="max-w-3xl mx-auto">
+              <Heart className="w-12 h-12 text-primary-600 mx-auto mb-6" />
+              <h2 className="text-3xl font-bold mb-4">Join Our Growing Community</h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Start your journey of Islamic learning and discovery with thousands of other seekers of knowledge.
+              </p>
+              <Link to="/research" className="btn-primary">
+                Get Started Today
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Footer */}
       <footer className="bg-gray-50 border-t border-gray-200 py-12">
         <div className="container mx-auto px-4">
@@ -112,6 +167,27 @@ const Index = () => {
         </div>
       </footer>
       </main>
+    </div>
+  );
+};
+
+const TopicCard = ({ icon, title, description, link }: { icon: React.ReactNode; title: string; description: string; link: string }) => {
+  return (
+    <Link to={link} className="block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+      <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-600 mb-4">
+        {icon}
+      </div>
+      <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+      <p className="text-gray-600">{description}</p>
+    </Link>
+  );
+};
+
+const StatCard = ({ number, label }: { number: string; label: string }) => {
+  return (
+    <div className="p-6">
+      <div className="text-4xl font-bold text-primary-600 mb-2">{number}</div>
+      <div className="text-gray-600">{label}</div>
     </div>
   );
 };
