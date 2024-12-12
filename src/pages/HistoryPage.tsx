@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { History, Search, Filter, Calendar, MapPin, BookOpen } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import { TimelineControls } from "@/components/history/TimelineControls";
+import { BookmarkedEvents } from "@/components/history/BookmarkedEvents";
 
-interface HistoricalEvent {
+export interface HistoricalEvent {
   year: string;
   title: string;
   description: string;
@@ -52,7 +54,8 @@ const historicalEvents: HistoricalEvent[] = [
 const HistoryPage = () => {
   const { toast } = useToast();
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [yearFilter, setYearFilter] = useState("");
+  const [bookmarkedEvents, setBookmarkedEvents] = useState<HistoricalEvent[]>([]);
   const [selectedEvent, setSelectedEvent] = useState<HistoricalEvent | null>(null);
 
   const filteredEvents = historicalEvents.filter(event => {
@@ -60,27 +63,24 @@ const HistoryPage = () => {
                          event.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          event.year.toLowerCase().includes(searchTerm.toLowerCase());
     
-    const matchesCategory = !selectedCategory || event.category === selectedCategory;
+    const matchesYear = !yearFilter || event.year.includes(yearFilter);
     
-    return matchesSearch && matchesCategory;
+    return matchesSearch && matchesYear;
   });
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleCategorySelect = (category: string) => {
-    if (selectedCategory === category) {
-      setSelectedCategory(null);
+  const handleBookmark = (event: HistoricalEvent) => {
+    const isBookmarked = bookmarkedEvents.some(e => e.title === event.title);
+    if (isBookmarked) {
+      setBookmarkedEvents(bookmarkedEvents.filter(e => e.title !== event.title));
       toast({
-        title: "Filter Removed",
-        description: "Showing all historical events",
+        title: "Event removed from bookmarks",
+        description: `"${event.title}" has been removed from your bookmarks.`,
       });
     } else {
-      setSelectedCategory(category);
+      setBookmarkedEvents([...bookmarkedEvents, event]);
       toast({
-        title: "Filter Applied",
-        description: `Showing ${category} events`,
+        title: "Event bookmarked",
+        description: `"${event.title}" has been added to your bookmarks.`,
       });
     }
   };
@@ -98,48 +98,16 @@ const HistoryPage = () => {
             <h1 className="text-3xl font-bold text-gray-900">Islamic History</h1>
           </div>
 
-          {/* Search and Filter Section */}
-          <div className="mb-8 space-y-4">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-              <Input
-                type="text"
-                placeholder="Search historical events..."
-                value={searchTerm}
-                onChange={handleSearch}
-                className="pl-10"
-              />
-            </div>
+          <TimelineControls
+            onSearch={setSearchTerm}
+            onFilterByYear={setYearFilter}
+          />
 
-            <div className="flex gap-2 flex-wrap">
-              <Button
-                variant={selectedCategory === "prophetic" ? "default" : "outline"}
-                onClick={() => handleCategorySelect("prophetic")}
-                className="flex items-center gap-2"
-              >
-                <Calendar className="w-4 h-4" />
-                Prophetic Era
-              </Button>
-              <Button
-                variant={selectedCategory === "caliphate" ? "default" : "outline"}
-                onClick={() => handleCategorySelect("caliphate")}
-                className="flex items-center gap-2"
-              >
-                <Filter className="w-4 h-4" />
-                Caliphate Era
-              </Button>
-              <Button
-                variant={selectedCategory === "knowledge" ? "default" : "outline"}
-                onClick={() => handleCategorySelect("knowledge")}
-                className="flex items-center gap-2"
-              >
-                <BookOpen className="w-4 h-4" />
-                Knowledge Era
-              </Button>
-            </div>
-          </div>
+          <BookmarkedEvents
+            bookmarkedEvents={bookmarkedEvents}
+            onViewEvent={handleEventClick}
+          />
 
-          {/* Timeline Section */}
           <div className="space-y-6">
             {filteredEvents.map((event, index) => (
               <Card 
@@ -153,12 +121,29 @@ const HistoryPage = () => {
                     <span className="inline-block px-3 py-1 rounded-full bg-primary-50 text-primary-700 text-sm font-medium">
                       {event.year}
                     </span>
-                    {event.location && (
-                      <span className="flex items-center text-sm text-gray-500">
-                        <MapPin className="w-4 h-4 mr-1" />
-                        {event.location}
-                      </span>
-                    )}
+                    <div className="flex gap-2">
+                      {event.location && (
+                        <span className="flex items-center text-sm text-gray-500">
+                          <MapPin className="w-4 h-4 mr-1" />
+                          {event.location}
+                        </span>
+                      )}
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleBookmark(event);
+                        }}
+                        className={`${
+                          bookmarkedEvents.some(e => e.title === event.title)
+                            ? "text-primary-600"
+                            : "text-gray-400"
+                        }`}
+                      >
+                        <BookOpen className="w-4 h-4" />
+                      </Button>
+                    </div>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{event.title}</h3>
                   <p className="text-gray-600 mb-3">{event.description}</p>
