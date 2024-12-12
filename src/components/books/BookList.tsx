@@ -81,6 +81,132 @@ const books: Book[] = [
       arabic: "كتاب في الأخلاق والآداب الإسلامية",
       english: "A book on Islamic ethics and manners"
     }
+  },
+  {
+    id: 4,
+    title: {
+      arabic: "بلوغ المرام",
+      english: "Bulugh al-Maram"
+    },
+    author: {
+      arabic: "ابن حجر العسقلاني",
+      english: "Ibn Hajar al-Asqalani"
+    },
+    category: "fiqh",
+    language: "both",
+    rating: 5,
+    description: {
+      arabic: "كتاب في أحاديث الأحكام الشرعية",
+      english: "A comprehensive collection of hadith pertaining to legal rulings"
+    }
+  },
+  {
+    id: 5,
+    title: {
+      arabic: "العقيدة الواسطية",
+      english: "Al-Aqidah Al-Wasitiyyah"
+    },
+    author: {
+      arabic: "ابن تيمية",
+      english: "Ibn Taymiyyah"
+    },
+    category: "aqeedah",
+    language: "both",
+    rating: 5,
+    description: {
+      arabic: "كتاب في العقيدة الإسلامية",
+      english: "A comprehensive book on Islamic creed and belief"
+    }
+  },
+  {
+    id: 6,
+    title: {
+      arabic: "الرحيق المختوم",
+      english: "The Sealed Nectar"
+    },
+    author: {
+      arabic: "صفي الرحمن المباركفوري",
+      english: "Safiur Rahman Mubarakpuri"
+    },
+    category: "seerah",
+    language: "both",
+    rating: 5,
+    description: {
+      arabic: "سيرة النبي محمد صلى الله عليه وسلم",
+      english: "Biography of Prophet Muhammad (peace be upon him)"
+    }
+  },
+  {
+    id: 7,
+    title: {
+      arabic: "تاريخ الطبري",
+      english: "History of Al-Tabari"
+    },
+    author: {
+      arabic: "محمد بن جرير الطبري",
+      english: "Muhammad ibn Jarir al-Tabari"
+    },
+    category: "history",
+    language: "both",
+    rating: 5,
+    description: {
+      arabic: "تاريخ الأمم والملوك",
+      english: "The History of Nations and Kings"
+    }
+  },
+  {
+    id: 8,
+    title: {
+      arabic: "إحياء علوم الدين",
+      english: "The Revival of Religious Sciences"
+    },
+    author: {
+      arabic: "أبو حامد الغزالي",
+      english: "Abu Hamid Al-Ghazali"
+    },
+    category: "spirituality",
+    language: "both",
+    rating: 5,
+    description: {
+      arabic: "موسوعة في التصوف والأخلاق الإسلامية",
+      english: "Encyclopedia of Islamic spirituality and ethics"
+    }
+  },
+  {
+    id: 9,
+    title: {
+      arabic: "صحيح مسلم",
+      english: "Sahih Muslim"
+    },
+    author: {
+      arabic: "مسلم بن الحجاج",
+      english: "Muslim ibn al-Hajjaj"
+    },
+    category: "hadith",
+    language: "both",
+    rating: 5,
+    description: {
+      arabic: "ثاني أصح كتب الحديث",
+      english: "The second most authentic collection of Hadith"
+    }
+  },
+  {
+    id: 10,
+    title: {
+      arabic: "زاد المعاد",
+      english: "Zad al-Ma'ad"
+    },
+    author: {
+      arabic: "ابن قيم الجوزية",
+      english: "Ibn Qayyim al-Jawziyya"
+    },
+    category: "fiqh",
+    language: "both",
+    rating: 5,
+    description: {
+      arabic: "كتاب في الفقه والسيرة النبوية",
+      english: "A comprehensive book on Islamic jurisprudence and prophetic biography"
+    }
   }
 ];
 
