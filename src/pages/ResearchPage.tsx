@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Search, Book, Compare, History, BookOpen, Languages } from "lucide-react";
+import { Search, Book, History, BookOpen, Languages } from "lucide-react";
 import { useState } from "react";
 
 const ResearchPage = () => {
@@ -44,7 +44,7 @@ const ResearchPage = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Compare className="h-5 w-5 text-primary" />
+                  <BookOpen className="h-5 w-5 text-primary" />
                   Text Comparison
                 </CardTitle>
                 <CardDescription>
