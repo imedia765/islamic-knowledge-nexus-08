@@ -5,6 +5,8 @@ import { useState } from "react";
 const BooksPage = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<"all" | "arabic" | "english">("all");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   return (
     <div className="container mx-auto px-4 py-8 pt-24">
@@ -20,12 +22,20 @@ const BooksPage = () => {
         setSelectedLanguage={setSelectedLanguage}
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        viewMode={viewMode}
+        setViewMode={setViewMode}
       />
       
-      <BookList 
-        selectedLanguage={selectedLanguage}
-        selectedCategory={selectedCategory}
-      />
+      <div className="mt-8">
+        <BookList 
+          selectedLanguage={selectedLanguage}
+          selectedCategory={selectedCategory}
+          searchQuery={searchQuery}
+          viewMode={viewMode}
+        />
+      </div>
     </div>
   );
 };

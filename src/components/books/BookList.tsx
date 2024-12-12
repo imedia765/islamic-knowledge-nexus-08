@@ -4,6 +4,8 @@ import { BookOpen, Star } from "lucide-react";
 interface BookListProps {
   selectedLanguage: "all" | "arabic" | "english";
   selectedCategory: string;
+  searchQuery: string;
+  viewMode: "grid" | "list";
 }
 
 interface Book {
@@ -82,7 +84,7 @@ const books: Book[] = [
   }
 ];
 
-export const BookList = ({ selectedLanguage, selectedCategory }: BookListProps) => {
+export const BookList = ({ selectedLanguage, selectedCategory, searchQuery, viewMode }: BookListProps) => {
   const filteredBooks = books.filter(book => {
     const languageMatch = 
       selectedLanguage === "all" || 
@@ -91,14 +93,30 @@ export const BookList = ({ selectedLanguage, selectedCategory }: BookListProps) 
     
     const categoryMatch = selectedCategory === "all" || book.category === selectedCategory;
     
-    return languageMatch && categoryMatch;
+    const searchMatch = searchQuery === "" || 
+      book.title.arabic.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      book.title.english.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      book.author.arabic.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      book.author.english.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    return languageMatch && categoryMatch && searchMatch;
   });
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className={`${
+      viewMode === "grid" 
+        ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        : "space-y-4"
+    }`}>
       {filteredBooks.map((book) => (
-        <Card key={book.id} className="hover:shadow-lg transition-shadow duration-200">
-          <CardHeader>
+        <Card 
+          key={book.id} 
+          className={`
+            hover:shadow-lg transition-shadow duration-200
+            ${viewMode === "list" ? "flex flex-col md:flex-row md:items-start" : ""}
+          `}
+        >
+          <CardHeader className={viewMode === "list" ? "md:w-1/3" : ""}>
             <CardTitle>
               <div className="space-y-2">
                 <div className="font-arabic text-xl">{book.title.arabic}</div>
@@ -112,7 +130,7 @@ export const BookList = ({ selectedLanguage, selectedCategory }: BookListProps) 
               </div>
             </CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className={viewMode === "list" ? "md:w-2/3" : ""}>
             <div className="space-y-4">
               <div className="flex items-center space-x-1">
                 <BookOpen className="h-4 w-4 text-primary-600" />
