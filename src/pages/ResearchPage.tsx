@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Search, Book, History, BookOpen, Languages } from "lucide-react";
+import { Search, Book, History, BookOpen, Languages, Database, FileText, Layers } from "lucide-react";
 import { useState } from "react";
 
 const ResearchPage = () => {
