@@ -26,31 +26,27 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-lg">
                   <svg
                     className="absolute inset-0 w-full h-full opacity-10"
-                    viewBox="0 0 100 100"
-                    preserveAspectRatio="none"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M0,0 L100,0 L100,100 L0,100 Z"
-                      fill="none"
+                      d="M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
                       stroke="currentColor"
                       className="text-primary-500"
-                      strokeWidth="0.5"
-                    />
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r="30"
-                      fill="none"
-                      stroke="currentColor"
-                      className="text-primary-500"
-                      strokeWidth="0.5"
+                      strokeWidth="1"
                     />
                     <path
-                      d="M25,50 Q50,25 75,50 Q50,75 25,50"
-                      fill="none"
+                      d="M8 9H16M8 12H16M8 15H12"
                       stroke="currentColor"
                       className="text-primary-500"
-                      strokeWidth="0.5"
+                      strokeWidth="1"
+                    />
+                    <path
+                      d="M7 7.5V16.5C7 17.3284 7.67157 18 8.5 18H15.5C16.3284 18 17 17.3284 17 16.5V7.5C17 6.67157 16.3284 6 15.5 6H8.5C7.67157 6 7 6.67157 7 7.5Z"
+                      stroke="currentColor"
+                      className="text-primary-500"
+                      strokeWidth="1"
                     />
                   </svg>
                 </div>
