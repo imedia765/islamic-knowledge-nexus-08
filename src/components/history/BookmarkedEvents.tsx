@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BookOpen } from "lucide-react";
-import { HistoricalEvent } from "../../pages/HistoryPage";
+import { HistoricalEvent } from "@/types/history";
 
 interface BookmarkedEventsProps {
   bookmarkedEvents: HistoricalEvent[];
