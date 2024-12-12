@@ -7,6 +7,7 @@ import { Navigation } from "@/components/Navigation";
 import Index from "./pages/Index";
 import QuranPage from "./pages/QuranPage";
 import ResearchPage from "./pages/ResearchPage";
+import HadithPage from "./pages/HadithPage";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/quran" element={<QuranPage />} />
-          <Route path="/hadith" element={<div className="p-8 pt-24 text-center">Hadith Module (Coming Soon)</div>} />
+          <Route path="/hadith" element={<HadithPage />} />
           <Route path="/fiqh" element={<div className="p-8 pt-24 text-center">Fiqh Module (Coming Soon)</div>} />
           <Route path="/research" element={<ResearchPage />} />
         </Routes>
