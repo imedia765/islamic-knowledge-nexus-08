@@ -1,4 +1,5 @@
 import { Search, Book, PlayCircle, Download } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const QuranPage = () => {
   return (
@@ -31,29 +32,41 @@ const QuranPage = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-600 mb-4">
-                <Book className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Word-by-Word Analysis</h3>
-              <p className="text-gray-600">Detailed morphological breakdown and root word analysis for deeper understanding.</p>
-            </div>
+            <Card className="hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-600 mb-4">
+                  <Book className="w-6 h-6" />
+                </div>
+                <CardTitle>Word-by-Word Analysis</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Detailed morphological breakdown and root word analysis for deeper understanding.</p>
+              </CardContent>
+            </Card>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-600 mb-4">
-                <PlayCircle className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Audio Recitations</h3>
-              <p className="text-gray-600">Listen to beautiful recitations from 25 renowned Qaris with adjustable playback speeds.</p>
-            </div>
+            <Card className="hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-600 mb-4">
+                  <PlayCircle className="w-6 h-6" />
+                </div>
+                <CardTitle>Audio Recitations</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Listen to beautiful recitations from 25 renowned Qaris with adjustable playback speeds.</p>
+              </CardContent>
+            </Card>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-600 mb-4">
-                <Download className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Offline Access</h3>
-              <p className="text-gray-600">Download verses and audio recitations for offline study and reference.</p>
-            </div>
+            <Card className="hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-600 mb-4">
+                  <Download className="w-6 h-6" />
+                </div>
+                <CardTitle>Offline Access</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Download verses and audio recitations for offline study and reference.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
