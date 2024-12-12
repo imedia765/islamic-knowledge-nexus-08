@@ -13,6 +13,7 @@ export const Navigation = () => {
             <Link to="/quran" className="nav-link">Quran</Link>
             <Link to="/hadith" className="nav-link">Hadith</Link>
             <Link to="/fiqh" className="nav-link">Fiqh</Link>
+            <Link to="/history" className="nav-link">History</Link>
             <Link to="/research" className="nav-link">Research</Link>
           </div>
 

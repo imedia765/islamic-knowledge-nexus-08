@@ -9,6 +9,7 @@ import QuranPage from "./pages/QuranPage";
 import ResearchPage from "./pages/ResearchPage";
 import HadithPage from "./pages/HadithPage";
 import FiqhPage from "./pages/FiqhPage";
+import HistoryPage from "./pages/HistoryPage";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/quran" element={<QuranPage />} />
           <Route path="/hadith" element={<HadithPage />} />
           <Route path="/fiqh" element={<FiqhPage />} />
+          <Route path="/history" element={<HistoryPage />} />
           <Route path="/research" element={<ResearchPage />} />
         </Routes>
       </BrowserRouter>
