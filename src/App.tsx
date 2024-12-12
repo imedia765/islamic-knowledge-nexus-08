@@ -3,7 +3,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Navigation } from "@/components/Navigation";
 import Index from "./pages/Index";
+import QuranPage from "./pages/QuranPage";
 
 const queryClient = new QueryClient();
 
@@ -13,12 +15,13 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Navigation />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/quran" element={<div className="p-8 text-center">Quran Module (Coming Soon)</div>} />
-          <Route path="/hadith" element={<div className="p-8 text-center">Hadith Module (Coming Soon)</div>} />
-          <Route path="/fiqh" element={<div className="p-8 text-center">Fiqh Module (Coming Soon)</div>} />
-          <Route path="/research" element={<div className="p-8 text-center">Research Tools (Coming Soon)</div>} />
+          <Route path="/quran" element={<QuranPage />} />
+          <Route path="/hadith" element={<div className="p-8 pt-24 text-center">Hadith Module (Coming Soon)</div>} />
+          <Route path="/fiqh" element={<div className="p-8 pt-24 text-center">Fiqh Module (Coming Soon)</div>} />
+          <Route path="/research" element={<div className="p-8 pt-24 text-center">Research Tools (Coming Soon)</div>} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -1,12 +1,9 @@
-import { Navigation } from "@/components/Navigation";
 import { Link } from "react-router-dom";
 import { Search, Book, BookOpen, Users } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
-      
       <main className="flex-1">
         {/* Hero Section */}
         <section className="pt-32 pb-16 hero-pattern">
